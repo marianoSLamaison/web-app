@@ -1,0 +1,40 @@
+body 
+{
+    background-color: #10103d;
+    color:rgb(255, 255, 255);
+}
+.textEntry
+{
+    padding: 5px;
+}
+
+#introScreenMainBlock
+{
+    margin: 5vh 25vw 5vh 25vw;
+    padding: 10px 10px 10px 10px;
+    background-color: #03072c;
+    box-shadow: 10px 10px 0 #7566fa;
+}
+
+#logginOptionList
+{
+    list-style: none;
+    padding-left: 0;
+    padding: 1vw ;
+    margin: 10px 10px;
+    border: 7px #14147c solid;
+    border-width: 10px 10px;
+}
+#logginOptionList h1 
+{
+    text-align: center;
+}
+.logButton
+{
+    
+    margin-left: 10px;
+}
+#logginOptionList li 
+{
+    margin-left: 40px;
+}
