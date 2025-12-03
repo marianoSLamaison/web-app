@@ -38,3 +38,13 @@ body
 {
     margin-left: 40px;
 }
+
+.invisible
+{
+    display: none;
+}
+
+.errorLabel
+{
+    display: block;
+}

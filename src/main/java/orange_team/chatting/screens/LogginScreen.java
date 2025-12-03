@@ -1,13 +1,14 @@
 package orange_team.chatting.screens;
+import java.io.Console;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import orange_team.chatting.DTOs.LogginData;
-import orange_team.chatting.DTOs.LogginResponse;
+import org.springframework.web.servlet.ModelAndView;
 /*
 Methodo acargo de controlar la pagina de loggin. Dado que incluye logica de respuesta a pedidos
 que no debe de renderizarse, solo puede ser controller, y aclaramos que methodos renderizan y cuales no
@@ -15,25 +16,21 @@ con ResponceBody
 */
 @Controller
 public class LogginScreen {
-
+    static String index_file = "loggin_screen/index.html" ;
     //@ResponseBody)
-    @GetMapping("/loggin")
-    public String GetScreen()
+    @RequestMapping(value="/loggin",
+                    method={RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView GetScreen(ModelAndView mv,
+                    @RequestParam(value = "password", required = false) String password,
+                    @RequestParam(value = "name", required = false) String name)
     {
-        return "loggin_screen/index.html";
-    }
-    @RequestMapping(value = "/isLogInfoValid", 
-                    method = RequestMethod.POST, 
-                    produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-
-    public LogginResponse checkUserLogIngo(@RequestBody LogginData logginData)
-    {
-        if (logginData.getPassword().equals("123") && logginData.getUserName().equals("Juan") )
+        mv.setViewName(index_file);        
+        if (password == null || name == null)
         {
-            return new LogginResponse(true);
-
+            mv.addObject("failure", false);
+            return mv;
         }
-        return new LogginResponse(false); 
+        mv.addObject("failure", !(password.equals("123") && name.equals("Juan")));
+        return mv;
     }
 }

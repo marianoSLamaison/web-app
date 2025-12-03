@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--NOTE: Turn this into a thyleaf html once it looks decent enough as to
+allow for translations-->
+<html>
+    <head>
+        <title>Chatting loggin</title>
+        <link rel="stylesheet" href="/loggin_screen/style.css">
+        <script src="/loggin_screen/logic.js"></script>
+    </head>
+    <body>
+        <div id="introScreenMainBlock">
+            <form action="/loggin" method="post" id="logginOptionList">
+                <h1>Log Inn</h1>
+                <div class="textEntry">
+                    <label for="NameInput">User Name</label>
+                    <input type="text" name="name"  placeholder="Insert User Name" required id="NameInput" class="textField">
+                </div>
+                <div class="textEntry">
+                    <label for="PasswordInput'">Password</label>
+                    <input type="password" name="password" placeholder="Insert Password" required id="PasswordInput" class="textField">
+                </div>
+                <button type="submit" class="logButton" value="/submitLogginData">Log Inn</button>
+                <label 
+                    for="" 
+                    th:class="${failure} ? 'errorLabel' : 'invisibleBlock'" 
+                    th:text="${failure}? 'please insert a valid user name': ''" ></label>
+
+                
+            </form>
+        </div>
+        <div id="toRegistrationBlock">
+            <h3>Or register maybe</h3>
+            <button type="button"><a href="/registration">Here</a></button>
+        </div>
+    </body>
+</html>
