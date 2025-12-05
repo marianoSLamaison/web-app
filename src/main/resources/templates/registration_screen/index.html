@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <!--NOTE: Si quieres hacer paginas que retornen la una a la otra, 
+    Eso se hace llamando al methodo de la pagina, no con link normales, 
+    spring no es consistente con como resuelve sus links y esto genera errores
+    aparentemente puedes resolverlo con el path solver, pero es mas facil asi a demas
+    mantiene la URL limpia  sin dar pistas de como esta organizado los archivos si eso te molesta-->
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="registration_screen/style.css">
+        <script src="registration_screen/logic.js"></script>
+    </head>
+    <body>
+        <h1>Registrations!</h1>
+        <form action="/checkValidityOfUser" method="post">
+            <!--NOTE: Try to use form for forms from now on. This thing is more clean apaerently-->
+            <ul>
+                <li>
+                    <p><label for="inputUserName">Type User Name *</label></p>
+                    <p><input type="text" name="userName" required id="inputUserName"></p>
+                </li>
+                <li>
+                            <p><label for="inputUserPassword">Type User Password *</label></p>
+                            <p><input type="password" name="userPassword" required id="inputUserPassword"></p>
+                            <input type="checkbox" value="showPassword">
+                            <label for="showPassword">Show Password</label>
+                </li>
+                <li>
+                    <p>
+                        <label for="inputUserBirthDate">Your Birth Date (Optional)</label>
+                    </p>
+                    <p>
+                        <input type="date" name="userBirthDate" id="inputUserBirthDate">
+                    </p>
+                </li>
+                <li>
+                    <input type="submit" value="Submit registration form">
+                    <p>All the fields with <q>*</q> on them are mandatory</p>
+                </li>
+            </ul>
+
+        </form>
+    </body>
+</html>
