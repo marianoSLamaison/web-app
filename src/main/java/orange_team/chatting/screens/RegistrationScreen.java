@@ -1,10 +1,12 @@
 package orange_team.chatting.screens;
 
 import java.net.http.HttpRequest;
+import java.sql.Date;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 //pantalla dedicada a recolectar informacion necesaria para registrar a un usuario
@@ -28,19 +30,17 @@ public class RegistrationScreen {
 
     @ResponseBody
     @RequestMapping(
-        value = "/SuccesfullRegistration",
+        value = "/RegistrationResults",
         method = RequestMethod.POST//a esta seccion solo se puede acceder atravez de post methods
     )
-    public ModelAndView GetSuccesScreen(ModelAndView mv)
-    {
-        return mv;
-    }
-    @ResponseBody
-    @RequestMapping(
-        value = "/FailureRegisteringUser"
+    //TODO: implementar un check con JS prev
+    public ModelAndView GetSuccesScreen(ModelAndView mv,
+        @RequestParam("userName") String userName, 
+        @RequestParam("userPassword") String userPassword, 
+        @RequestParam(value = "userBirthDate", required = false) Date userBirthDate
     )
-    public ModelAndView GetFailureScreen(ModelAndView mv)
     {
+        
         return mv;
     }
 }

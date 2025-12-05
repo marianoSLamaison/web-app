@@ -11,34 +11,37 @@
         <script src="registration_screen/logic.js"></script>
     </head>
     <body>
-        <h1>Registrations!</h1>
-        <form action="/checkValidityOfUser" method="post">
-            <!--NOTE: Try to use form for forms from now on. This thing is more clean apaerently-->
-            <ul>
-                <li>
-                    <p><label for="inputUserName">Type User Name *</label></p>
-                    <p><input type="text" name="userName" required id="inputUserName"></p>
-                </li>
-                <li>
-                            <p><label for="inputUserPassword">Type User Password *</label></p>
-                            <p><input type="password" name="userPassword" required id="inputUserPassword"></p>
-                            <input type="checkbox" value="showPassword">
-                            <label for="showPassword">Show Password</label>
-                </li>
-                <li>
-                    <p>
-                        <label for="inputUserBirthDate">Your Birth Date (Optional)</label>
-                    </p>
-                    <p>
-                        <input type="date" name="userBirthDate" id="inputUserBirthDate">
-                    </p>
-                </li>
-                <li>
-                    <input type="submit" value="Submit registration form">
-                    <p>All the fields with <q>*</q> on them are mandatory</p>
-                </li>
-            </ul>
-
-        </form>
+        <div id="centralScuare">
+            <h1>Registrations!</h1>
+            <form action="/RegistrationResults" method="post">
+                <!--NOTE: Esto le dara un nuevo html al usuario cuya unica opcion es para volver
+                atras  o para entrar a su nueva cuenta, depende en que resulte el pedido -->
+                <ul>
+                    <li>
+                        <p><label for="inputUserName">Type User Name *</label></p>
+                        <p><input type="text" name="userName" required id="inputUserName"></p>
+                    </li>
+                    <li>
+                                <p><label for="inputUserPassword">Type User Password *</label></p>
+                                <p><input type="password" name="userPassword" required id="inputUserPassword"></p>
+                                <input type="checkbox" value="showPassword">
+                                <label for="showPassword">Show Password</label>
+                    </li>
+                    <li>
+                        <p>
+                            <label for="inputUserBirthDate">Your Birth Date (Optional)</label>
+                        </p>
+                        <p>
+                            <input type="date" name="userBirthDate" id="inputUserBirthDate">
+                        </p>
+                    </li>
+                    <li>
+                        <input type="submit" value="Submit registration form">
+                        <p>All the fields with <q>*</q> on them are mandatory</p>
+                    </li>
+                </ul>
+    
+            </form>
+        </div>
     </body>
 </html>
