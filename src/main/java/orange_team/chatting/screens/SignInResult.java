@@ -9,6 +9,11 @@ import orange_team.chatting.DomainObjects.Poster;
 
 @Controller
 public class SignInResult {
+
+    //@Autowired
+    //Global repo for all posters, here whe ask for them
+    //PosterRepo posterRepo;
+
     @RequestMapping(method = RequestMethod.POST, value = "/getting_in/sign_in_result")
     public String GetScreen(
         @RequestParam(name = "unique_user_name") String id_name,
